@@ -1,0 +1,10 @@
+.terraform/
+terraform.tfstate*
+_output/
+oidc/keys.json
+oidc/signing_key_public.pem
+
+_dev/
+*install-config.yaml
+
+_cast/
