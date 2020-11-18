@@ -86,7 +86,8 @@ module "iam_role_ebs_csi_driver" {
   oidc_issuer = module.oidc.issuer
 
   service_accounts = [
-    { namespace = "openshift-cluster-csi-drivers", name = "aws-ebs-csi-driver-operator" }
+    { namespace = "openshift-cluster-csi-drivers", name = "aws-ebs-csi-driver-operator" },
+    { namespace = "openshift-cluster-csi-drivers", name = "aws-ebs-csi-driver-controller-sa" }
   ]
   secret = { namespace = "openshift-cluster-csi-drivers", name = "ebs-cloud-credentials", sts_token_path = "/var/run/secrets/openshift/serviceaccount/token" }
   policy = file("./iam_role/iam_role_policy/ebs_csi_driver_operator.json")

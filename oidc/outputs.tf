@@ -9,3 +9,7 @@ output issuer {
 output signing_key_pem {
   value = tls_private_key.signing_key.private_key_pem
 }
+
+output s3_bucket_arn {
+  value = aws_s3_bucket.discovery.arn
+}
